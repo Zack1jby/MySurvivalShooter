@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 78335bb90c3d4164b9e9d94705b77086
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - healthDrop: {fileID: 625942252866307520, guid: c42ef67e2db10f04e9c02490e6b763b6, type: 3}
+  - scoreDrop: {fileID: 4553911815719083888, guid: 9bcad12ee17d3634998280e21ec88d46, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
