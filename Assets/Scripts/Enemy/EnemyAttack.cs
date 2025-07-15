@@ -6,6 +6,7 @@ public class EnemyAttack : MonoBehaviour
     public int attackDamage = 10;
 
     private Animator anim;
+    private string playerDefeatAnim = "PlayerDead";
     private GameObject player;
     private PlayerHealth playerHealth;
     private EnemyHealth enemyHealth;
@@ -42,12 +43,15 @@ public class EnemyAttack : MonoBehaviour
         if(timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0)
         {
             // Don't attack the player character if they're invincible
-            if (!playerHealth.isInvincible) Attack();
+            if (!playerHealth.isInvincible)
+            {
+                Attack();
+            }
         }
 
         if(playerHealth.currentHealth <= 0)
         {
-            anim.SetTrigger("PlayerDead");
+            anim.SetTrigger(playerDefeatAnim);
         }
     }
 
