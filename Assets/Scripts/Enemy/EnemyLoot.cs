@@ -7,6 +7,8 @@ public class EnemyLoot : MonoBehaviour
     public int healthDropOdds;
     public int scoreDropOdds;
 
+    [SerializeField] private float groundOffset = .15f;
+
     public void DropLoot()
     {
         // Random chance to spawn ONE or none of the following loot drops
@@ -14,11 +16,11 @@ public class EnemyLoot : MonoBehaviour
 
         if (lootCheck <= scoreDropOdds)
         {
-            Instantiate(scoreDrop, transform.position + new Vector3(0, .15f), transform.rotation);
+            Instantiate(scoreDrop, transform.position + new Vector3(0, groundOffset), transform.rotation);
         }
         else if (lootCheck <= healthDropOdds)
         {
-            Instantiate(healthDrop, transform.position + new Vector3(0, .15f), transform.rotation);
+            Instantiate(healthDrop, transform.position + new Vector3(0, groundOffset), transform.rotation);
         }
     }
 }
