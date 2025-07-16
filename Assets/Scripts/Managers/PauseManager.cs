@@ -4,10 +4,9 @@ public class PauseManager : MonoBehaviour
 {
     public GameObject PauseMenu;
     public PlayerHealth playerHealth;
-
     public static bool isPaused;
 
-    Canvas pauseCanvas;
+    private Canvas pauseCanvas;
 
     private void Awake()
     {
