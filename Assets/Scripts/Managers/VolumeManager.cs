@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class VolumeManager : MonoBehaviour
 {
-    Slider volumeSlider;
+    private Slider volumeSlider;
 
     private void Awake()
     {
