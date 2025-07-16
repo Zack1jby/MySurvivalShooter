@@ -3873,6 +3873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1432375316}
   restartDelay: 5
+  GameOverTrigger: GameOver
 --- !u!1 &1942558001
 GameObject:
   m_ObjectHideFlags: 0
