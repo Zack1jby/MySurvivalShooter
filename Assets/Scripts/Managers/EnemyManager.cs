@@ -8,14 +8,14 @@ public class EnemyManager : MonoBehaviour
     public GameObject enemy;
     public float spawnTime = 3f;
     public Transform[] spawnPoints;
-    int spawnPointIndex;
-    bool nextSpawnSwapReady;
-    float spawnSwapTime = 10f;
+    private int spawnPointIndex;
+    private bool nextSpawnSwapReady;
+    private float spawnSwapTime = 10f;
 
-    EnemyHealth enemyHealth;
-    EnemyAttack enemyAttack;
-    EnemyLoot enemyLoot;
-    NavMeshAgent navMeshAgent;
+    private EnemyHealth enemyHealth;
+    private EnemyAttack enemyAttack;
+    private EnemyLoot enemyLoot;
+    private NavMeshAgent navMeshAgent;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
