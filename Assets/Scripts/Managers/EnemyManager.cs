@@ -33,18 +33,6 @@ public class EnemyManager : MonoBehaviour
         enemyLoot = enemy.GetComponent<EnemyLoot>();
         navMeshAgent = enemy.GetComponent<NavMeshAgent>();
         // Assign enemy stats according to their types
-        /*if (enemy.name == "Zombunny")
-        {
-            EnemyBuildZombunny();
-        }
-        else if (enemy.name == "ZomBear")
-        {
-            EnemyBuildZomBear();
-        }
-        else if (enemy.name == "Hellephant")
-        {
-            EnemyBuildHellephant();
-        }*/
         switch(enemyType)
         {
             case Enemy.Zombunny:
