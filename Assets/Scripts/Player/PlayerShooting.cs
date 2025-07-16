@@ -9,18 +9,17 @@ public class PlayerShooting : MonoBehaviour
     public float rangePrimary = 100f;
     public float rangeSecondary = 5f;
 
-    float timer;
-    Ray shootRay;
-    RaycastHit shootHit;
-    int shootableMask;
-    ParticleSystem gunParticles;
-    public LineRenderer gunLine;
-    public LineRenderer[] shotgunLines;
-    AudioSource gunAudio;
-    Light gunLight;
-    float effectsDisplayTime = .2f;
-
-    public PlayerMovement playerMovement;
+    private float timer;
+    private Ray shootRay;
+    private RaycastHit shootHit;
+    private int shootableMask;
+    private ParticleSystem gunParticles;
+    [SerializeField] private LineRenderer gunLine;
+    [SerializeField] private LineRenderer[] shotgunLines;
+    private AudioSource gunAudio;
+    private Light gunLight;
+    private float effectsDisplayTime = .2f;
+    [SerializeField] private PlayerMovement playerMovement;
 
     private void Awake()
     {
@@ -32,7 +31,10 @@ public class PlayerShooting : MonoBehaviour
 
     void Update()
     {
-        if (PauseManager.isPaused || playerMovement.isDashing) return;
+        if (PauseManager.isPaused || playerMovement.isDashing)
+        {
+            return;
+        }
 
         timer += Time.deltaTime;
 
