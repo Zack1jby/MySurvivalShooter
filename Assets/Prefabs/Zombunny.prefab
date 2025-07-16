@@ -353,6 +353,7 @@ MonoBehaviour:
   scoreDrop: {fileID: 4553911815719083888, guid: 9bcad12ee17d3634998280e21ec88d46, type: 3}
   healthDropOdds: 20
   scoreDropOdds: 0
+  groundOffset: 0.15
 --- !u!4 &2876210474095796453 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400074, guid: be66986effd141b4992d2d78be127139, type: 3}

@@ -10227,6 +10227,7 @@ MonoBehaviour:
   scoreDrop: {fileID: 4553911815719083888, guid: 9bcad12ee17d3634998280e21ec88d46, type: 3}
   healthDropOdds: 50
   scoreDropOdds: 20
+  groundOffset: 0.15
 --- !u!1 &1915870434614438
 GameObject:
   m_ObjectHideFlags: 0

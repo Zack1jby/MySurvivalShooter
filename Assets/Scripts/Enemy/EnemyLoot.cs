@@ -7,7 +7,7 @@ public class EnemyLoot : MonoBehaviour
     public int healthDropOdds;
     public int scoreDropOdds;
 
-    [SerializeField] private float groundOffset = .15f;
+    [SerializeField] private float groundOffset;
 
     public void DropLoot()
     {
