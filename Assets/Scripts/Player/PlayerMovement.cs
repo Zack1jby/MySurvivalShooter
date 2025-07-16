@@ -9,13 +9,13 @@ public class PlayerMovement : MonoBehaviour
     public float dashCooldownTime = 3f;
     public bool isDashing;
     public GameObject dashShield;
-    bool canDash = true;
+    private bool canDash = true;
 
-    Vector3 movement;
-    Animator anim;
-    Rigidbody playerRigidBody;
-    int floorMask;
-    float camRayLength = 100f;
+    private Vector3 movement;
+    private Animator anim;
+    private Rigidbody playerRigidBody;
+    private int floorMask;
+    private float camRayLength = 100f;
 
     private void Awake()
     {
