@@ -3,8 +3,9 @@ using UnityEngine;
 
 public class HealthPillHeal : MonoBehaviour
 {
-    GameObject player;
-    PlayerHealth playerHealth;
+    private GameObject player;
+    private PlayerHealth playerHealth;
+    private int healAmount = 50;
 
     void Awake()
     {
@@ -17,7 +18,7 @@ public class HealthPillHeal : MonoBehaviour
         // Heal player then disappear
         if (other.gameObject == player)
         {
-            playerHealth.RecoverHealth(50);
+            playerHealth.RecoverHealth(healAmount);
             GameObject.Destroy(this.gameObject);
         }
     }
