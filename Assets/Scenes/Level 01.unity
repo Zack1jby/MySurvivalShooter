@@ -580,6 +580,7 @@ MonoBehaviour:
   - {fileID: 2106222554}
   - {fileID: 1154710781}
   - {fileID: 868133654}
+  enemyType: 0
 --- !u!114 &419413466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -598,6 +599,7 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 1942558002}
   - {fileID: 1409577926}
+  enemyType: 2
 --- !u!114 &419413467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -617,6 +619,7 @@ MonoBehaviour:
   - {fileID: 1482801267}
   - {fileID: 1831922995}
   - {fileID: 3921114}
+  enemyType: 1
 --- !u!1 &432764621
 GameObject:
   m_ObjectHideFlags: 0

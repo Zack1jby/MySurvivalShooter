@@ -2,6 +2,13 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
 
+public enum Enemy
+{
+    Zombunny,
+    ZomBear,
+    Hellephant
+}
+
 public class EnemyManager : MonoBehaviour
 {
     public PlayerHealth playerHealth;
@@ -12,6 +19,7 @@ public class EnemyManager : MonoBehaviour
     private bool nextSpawnSwapReady;
     private float spawnSwapTime = 10f;
 
+    [SerializeField] private Enemy enemyType;
     private EnemyHealth enemyHealth;
     private EnemyAttack enemyAttack;
     private EnemyLoot enemyLoot;
@@ -25,7 +33,7 @@ public class EnemyManager : MonoBehaviour
         enemyLoot = enemy.GetComponent<EnemyLoot>();
         navMeshAgent = enemy.GetComponent<NavMeshAgent>();
         // Assign enemy stats according to their types
-        if (enemy.name == "Zombunny")
+        /*if (enemy.name == "Zombunny")
         {
             EnemyBuildZombunny();
         }
@@ -36,6 +44,18 @@ public class EnemyManager : MonoBehaviour
         else if (enemy.name == "Hellephant")
         {
             EnemyBuildHellephant();
+        }*/
+        switch(enemyType)
+        {
+            case Enemy.Zombunny:
+                EnemyBuildZombunny();
+                break;
+            case Enemy.ZomBear:
+                EnemyBuildZomBear();
+                break;
+            case Enemy.Hellephant:
+                EnemyBuildHellephant();
+                break;
         }
         // Select a random starting spawn
         spawnPointIndex = Random.Range(0, spawnPoints.Length);
