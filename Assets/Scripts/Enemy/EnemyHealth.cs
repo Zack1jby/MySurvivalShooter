@@ -24,23 +24,25 @@ public class EnemyHealth : MonoBehaviour
         enemyAudio = GetComponent<AudioSource>();
         hitParticles = GetComponentInChildren<ParticleSystem>();
         capsuleCollider = GetComponent<CapsuleCollider>();
+        enemyLoot = GetComponent<EnemyLoot>();
 
         currentHealth = startingHealth;
-
-        enemyLoot = GetComponent<EnemyLoot>();
     }
 
     void Update()
     {
         if(isSinking)
         {
-            transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
+            transform.Translate(Vector3.down * sinkSpeed * Time.deltaTime);
         }
     }
 
-    public void TakeDamge(int amount, Vector3 hitpoint)
+    public void TakeDamage(int amount, Vector3 hitpoint)
     {
-        if (isDead) return;
+        if (isDead)
+        { 
+            return;
+        }
 
         enemyAudio.Play();
 
