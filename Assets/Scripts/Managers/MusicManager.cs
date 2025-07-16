@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    AudioSource musicSource;
-    bool musicPaused;
+    private AudioSource musicSource;
+    private bool musicPaused;
 
     public PlayerHealth playerHealth;
 
