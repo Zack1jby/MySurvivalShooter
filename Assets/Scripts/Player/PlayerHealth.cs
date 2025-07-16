@@ -31,14 +31,6 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        /*if (playerMovement.isDashing)
-        {
-            isInvincible = true;
-        }
-        else
-        {
-            isInvincible = false;
-        }*/
         // If the player character is dashing, make them invincible. If not, make them vunerable.
         isInvincible = playerMovement.isDashing ? true : false;
 
