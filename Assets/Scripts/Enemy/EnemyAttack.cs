@@ -4,10 +4,10 @@ public class EnemyAttack : MonoBehaviour
 {
     public float timeBetweenAttacks = .5f;
     public int attackDamage = 10;
+    public GameObject player;
 
     private Animator anim;
     private string playerDefeatAnim = "PlayerDead";
-    private GameObject player;
     private PlayerHealth playerHealth;
     private EnemyHealth enemyHealth;
     private bool playerInRange;
@@ -15,7 +15,6 @@ public class EnemyAttack : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
         enemyHealth = GetComponent<EnemyHealth>();
         anim = GetComponent<Animator>();

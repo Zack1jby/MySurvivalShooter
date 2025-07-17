@@ -23,7 +23,9 @@ public class EnemyManager : MonoBehaviour
     private EnemyHealth enemyHealth;
     private EnemyAttack enemyAttack;
     private EnemyLoot enemyLoot;
+    private EnemyMovement enemyMovement;
     private NavMeshAgent navMeshAgent;
+    private GameObject player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,9 +33,11 @@ public class EnemyManager : MonoBehaviour
         enemyHealth = enemy.GetComponent<EnemyHealth>();
         enemyAttack = enemy.GetComponent<EnemyAttack>();
         enemyLoot = enemy.GetComponent<EnemyLoot>();
+        enemyMovement = enemy.GetComponent<EnemyMovement>();
         navMeshAgent = enemy.GetComponent<NavMeshAgent>();
-        // Assign enemy stats according to their types
-        switch(enemyType)
+        player = GameObject.FindGameObjectWithTag("Player");
+        // Assign enemy stats according to their types, then give their scripts a reference to the player
+        switch (enemyType)
         {
             case Enemy.Zombunny:
                 EnemyBuildZombunny();
@@ -45,6 +49,7 @@ public class EnemyManager : MonoBehaviour
                 EnemyBuildHellephant();
                 break;
         }
+        GivePlayerReference();
         // Select a random starting spawn
         spawnPointIndex = Random.Range(0, spawnPoints.Length);
 
@@ -108,5 +113,12 @@ public class EnemyManager : MonoBehaviour
         enemyLoot.healthDropOdds = 50;
         enemyLoot.scoreDropOdds = 20;
         spawnTime = 8f;
+    }
+
+    private void GivePlayerReference()
+    {
+        enemyAttack.player = player;
+        enemyMovement.player = player.GetComponent<Transform>();
+        enemyLoot.player = player;
     }
 }

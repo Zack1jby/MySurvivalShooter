@@ -3,13 +3,12 @@ using UnityEngine;
 
 public class HealthPillHeal : MonoBehaviour
 {
-    private GameObject player;
+    public GameObject player;
     private PlayerHealth playerHealth;
     private int healAmount = 50;
 
-    void Awake()
+    void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
     }
 

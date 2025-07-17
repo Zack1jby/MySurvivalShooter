@@ -3,14 +3,13 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private Transform player;
+    public Transform player;
     private PlayerHealth playerHealth;
     private EnemyHealth enemyHealth;
     private NavMeshAgent navAgent;
 
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
         playerHealth = player.GetComponent<PlayerHealth>();
         enemyHealth = GetComponent<EnemyHealth>();
         navAgent = GetComponent<NavMeshAgent>();
